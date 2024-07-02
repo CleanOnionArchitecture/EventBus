@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+
+        <Company>Clean Onion Architecture</Company>
+
+        <ProductName>CleanOnionArchitecture.EventBus</ProductName>
+        
+        <Authors>
+            <![CDATA[
+                
+            ]]>
+        </Authors>
+
+        <Version>1.0.0</Version>
+
+        <Product>$(ProductName)</Product>
+        <AssemblyName>$(ProductName)</AssemblyName>
+        <RootNamespace>$(ProductName)</RootNamespace>
+
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>$(ProductName)</PackageId>
+        <Title>$(ProductName)</Title>
+
+        <PackageProjectUrl>https://github.com/CleanOnionArchitecture/EventBus</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/CleanOnionArchitecture/EventBus/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/CleanOnionArchitecture/EventBus</RepositoryUrl>
+
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>clean onion architecture, event bus</PackageTags>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\ReadMe.md" Pack="true" PackagePath="\">
+            <Link>ReadMe.md</Link>
+        </Content>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+    </PropertyGroup>
+
+</Project>
